@@ -3,6 +3,7 @@ import { TweetComponent } from "./tweet";
 import { GoodBadImageComponent } from "./good-bad-image"
 import { YoutubeVideoComponent } from "./youtube-video";
 import { EmailTemplateComponent } from "./email-template";
+import { InfoComponent } from "./info";
 /**
  * The components we want in the /keystatic editor 
  */
@@ -11,5 +12,6 @@ export const componentBlocks = {
 	GoodBadImageComponent,
 	GoodBadComponent,
 	YoutubeVideoComponent,
-	EmailTemplateComponent
+	EmailTemplateComponent,
+    InfoComponent,	
 };

@@ -9,8 +9,8 @@ export default async function Post({ params }: { params: { slug: string } }) {
   if (!post) return <div>Rule not found!</div>;
 
   return (
-    <div className="border-grey-300 shadow-lg mx-auto grid max-w-prose">
-      <div className=' items-center gap-16'>
+    <div className="border-grey-300 shadow-lg mx-auto grid max-w-prose p-5">
+      <div className='items-center gap-16'>
         <div className="prose dark:prose-invert">
           <h1>{post.title}</h1>
           <div>
