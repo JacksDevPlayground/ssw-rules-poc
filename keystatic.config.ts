@@ -28,6 +28,7 @@ export default config({
         content: fields.document({
           label: 'Content',
           componentBlocks,
+          tables: true,
           formatting: true,
           dividers: true,
           links: true,
