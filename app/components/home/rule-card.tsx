@@ -23,7 +23,7 @@ const formatRelativeTime = (date: Date) => {
 	const month = day * 30; // Approximation
 	const year = day * 365; // Approximation
 
-	const rtf = new Intl.RelativeTimeFormat('en', { style: 'short' });
+	const rtf = new Intl.RelativeTimeFormat('en', { style: 'long' });
 
 	if (diffInSeconds < minute) {
 		return rtf.format(-diffInSeconds, 'second');
