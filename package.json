@@ -6,6 +6,7 @@
     "@keystatic/core": "^0.1.0",
     "@keystatic/next": "^1.0.0",
     "@markdoc/markdoc": "^0.3.2",
+    "@radix-ui/react-accordion": "^1.1.2",
     "@sindresorhus/slugify": "^2.2.1",
     "@tailwindcss/typography": "^0.5.10",
     "class-variance-authority": "^0.7.0",
@@ -19,6 +20,7 @@
     "react-lite-youtube-embed": "^2.3.52",
     "react-tweet": "^3.1.1",
     "shiki": "^0.14.4",
+    "sonner": "^0.7.4",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7",
     "ts-pattern": "^5.0.5"

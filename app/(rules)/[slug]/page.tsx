@@ -1,5 +1,5 @@
-import { CustomDocumentRenderer } from '../components/keystatic/custom-renderer';
-import { reader } from '../reader';
+import { CustomDocumentRenderer } from '../../components/keystatic/custom-renderer';
+import { reader } from '../../reader';
 
 export default async function Post({ params }: { params: { slug: string } }) {
   const { slug } = params;
