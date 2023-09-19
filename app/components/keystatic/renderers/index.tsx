@@ -11,7 +11,8 @@ import GoodBad from "../component-blocks/good-bad/good-bad";
 import GoodBadImage from "../component-blocks/good-bad-image/good-bad-image";
 import YouTubeVideo from "../component-blocks/youtube-video/youtube-video";
 import EmailTemplate from "../component-blocks/email-template/email-template";
-import Info from "../component-blocks/info/info";
+import Aside from "../component-blocks/aside/aside";
+import Greybox from "../component-blocks/greybox/greybox";
 
 /**
  * Override default renderers provided by @keystatic/core/renderer
@@ -51,5 +52,6 @@ export const ComponentBlockRenderers = {
 	GoodBadImageComponent: (props) => <GoodBadImage {...props} />,
 	YoutubeVideoComponent: (props) => <YouTubeVideo {...props} />,
 	EmailTemplateComponent: (props) => <EmailTemplate {...props} />,
-	InfoComponent: (props) => <Info {...props} />,
+	AsideComponent: (props) => <Aside {...props} />,
+	GreyboxComponent: (props) => <Greybox {...props} />,
 } satisfies InferRenderersForComponentBlocks<typeof componentBlocks>;

@@ -1,35 +1,20 @@
-import { config, fields, collection, singleton } from '@keystatic/core';
+import { config, fields, collection, singleton, GitHubConfig, LocalConfig } from '@keystatic/core';
 import { nanoid } from 'nanoid';
 import { componentBlocks } from './app/components/keystatic/component-blocks';
-import { __experimental_markdoc_field } from '@keystatic/core/form/fields/markdoc';
-import { Config } from '@markdoc/markdoc';
 
-const markdocConfig: Config = {
-  tags: {
-    aside: {
-      render: 'GoodBadComponent',
-      attributes: {
-        type: {
-          type: String,
-          required: true,
-        },
-        figureText: {
-          type: String,
-          required: false,
-        },
+const storage: LocalConfig['storage'] | GitHubConfig['storage'] =
+  process.env.NODE_ENV === 'development'
+    ? { kind: 'local' }
+    : {
+      kind: 'github',
+      repo: {
+        owner: process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_OWNER!,
+        name: process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG!,
       },
     }
-  }
-}
 
 export default config({
-  storage: {
-    kind: 'github',
-    repo: {
-      owner: 'JacksDevPlayground',
-      name: 'asStatic.Content',
-    }
-  },
+  storage,
   collections: {
     rules: collection({
       label: 'Rules',
