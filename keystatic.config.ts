@@ -25,6 +25,15 @@ export default config({
       schema: {
         title: fields.slug({ name: { label: 'Title' }, }),
         identifier: fields.text({ label: 'Identifier', defaultValue: () => nanoid(), validation: { length: { min: 6 } } }),
+        blurb: fields.document({
+          label: 'Blurb',
+          componentBlocks,
+          tables: true,
+          formatting: true,
+          dividers: true,
+          links: true,
+          images: true,
+        }),
         content: fields.document({
           label: 'Content',
           componentBlocks,
@@ -68,7 +77,7 @@ export default config({
     category: collection({
       label: 'Categories',
       slugField: 'title',
-      path: 'content/Categories/*/',
+      path: 'content/category/*/',
       format: { contentField: 'description' },
       schema: {
         title: fields.slug({ name: { label: 'Title' }, }),
