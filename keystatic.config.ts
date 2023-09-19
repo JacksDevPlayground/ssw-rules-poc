@@ -25,6 +25,18 @@ export default config({
       schema: {
         title: fields.slug({ name: { label: 'Title' }, }),
         identifier: fields.text({ label: 'Identifier', defaultValue: () => nanoid(), validation: { length: { min: 6 } } }),
+        dateCreated: fields.datetime({ label: 'Date Created', validation: { isRequired: true } }),
+        lastUpdated: fields.datetime({ label: 'Last Updated', defaultValue: new Date().toISOString(), validation: { isRequired: true } }),
+        archive: fields.text({ label: 'Archive Reason' }),
+        blurb: fields.document({
+          label: 'Blurb',
+          componentBlocks,
+          tables: true,
+          formatting: true,
+          dividers: true,
+          links: true,
+          images: true,
+        }),
         content: fields.document({
           label: 'Content',
           componentBlocks,
@@ -34,6 +46,32 @@ export default config({
           links: true,
           images: true,
         }),
+        acknowledgements: fields.array(
+          fields.object({
+            name: fields.text({ label: 'Name' }),
+            url: fields.text({ label: 'SSW People Profile URL' }),
+          }),
+          {
+            label: 'Acknowledgements',
+            itemLabel: (props) => props.fields.name.value ?? 'Enter an acknowledgement',
+          }),
+        related: fields.array(
+          fields.relationship({
+            label: 'Related Rules', collection: 'rules',
+            validation: {
+              isRequired: true,
+            },
+          }),
+          {
+            label: 'Related Rules',
+            itemLabel: (props) => props.value ?? 'Select a rule',
+          }),
+        redirects: fields.array(
+          fields.text({ label: 'Redirects' }),
+          {
+            label: 'Redirects',
+            itemLabel: (props) => props.value ?? 'Enter a redirect',
+          }),
       },
     }),
     tags: collection({
