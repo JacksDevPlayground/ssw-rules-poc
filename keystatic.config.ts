@@ -106,7 +106,7 @@ export default config({
     category: collection({
       label: 'Categories',
       slugField: 'title',
-      path: 'content/Categories/*/',
+      path: 'content/category/*/',
       format: { contentField: 'description' },
       schema: {
         title: fields.slug({ name: { label: 'Title' }, }),
