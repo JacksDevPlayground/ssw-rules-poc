@@ -25,8 +25,8 @@ export default config({
       schema: {
         title: fields.slug({ name: { label: 'Title' }, }),
         identifier: fields.text({ label: 'Identifier', defaultValue: () => nanoid(), validation: { length: { min: 6 } } }),
-        dateCreated: fields.datetime({ label: 'Date Created', validation: { isRequired: true } }),
-        lastUpdated: fields.datetime({ label: 'Last Updated', defaultValue: new Date().toISOString(), validation: { isRequired: true } }),
+        dateCreated: fields.text({ label: 'Date Created', defaultValue: new Date().toISOString() }),
+        lastUpdated: fields.text({ label: 'Last Updated', defaultValue: new Date().toISOString() }),
         archive: fields.text({ label: 'Archive Reason' }),
         blurb: fields.document({
           label: 'Blurb',
