@@ -7,12 +7,11 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const post = await reader.collections.rules.read(slug);
 
   if (!post) return <div>Rule not found!</div>;
-
   return (
-    <div className="border-grey-300 shadow-lg mx-auto grid max-w-prose p-5">
+    <div className="border-grey-300 shadow-lg mx-auto max-w-prose md:max-w-prose-xl p-5">
       <div className='items-center gap-16'>
         <div className="prose dark:prose-invert">
-          <h1>{post.title}</h1>
+          <h1 className='text-primary'>{post.title}</h1>
           <div>
             <CustomDocumentRenderer document={await post.content()} />
           </div>
