@@ -126,6 +126,10 @@ dist
 # ! INFO:  This needs to be excluded from the .gitignore file to find content
 # ! INFO: However, we don't want to push content to the repo. 
 content
+public/rules
+public/categories
+public/category
+public/tag
 
 # yarn v2
 .yarn/cache

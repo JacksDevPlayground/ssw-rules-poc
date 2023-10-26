@@ -35,7 +35,10 @@ export default config({
           formatting: true,
           dividers: true,
           links: true,
-          images: true,
+          images: {
+            directory: 'public/rules',
+            publicPath: '/rules/'
+          },
         }),
         content: fields.document({
           label: 'Content',
@@ -44,7 +47,10 @@ export default config({
           formatting: true,
           dividers: true,
           links: true,
-          images: true,
+          images: {
+            directory: 'public/rules',
+            publicPath: '/rules/'
+          },
         }),
         acknowledgements: fields.array(
           fields.object({
@@ -87,7 +93,10 @@ export default config({
           formatting: true,
           dividers: true,
           links: true,
-          images: true,
+          images: {
+            directory: 'public/rules',
+            publicPath: '/rules/'
+          },
         }),
         image: fields.image({ label: 'Image' }),
         childCategories: fields.array(
@@ -127,7 +136,10 @@ export default config({
           formatting: true,
           dividers: true,
           links: true,
-          images: true,
+          images: {
+            directory: 'public/rules',
+            publicPath: '/rules/'
+          },
         }),
         image: fields.image({ label: 'Image' }),
         rules: fields.array(
