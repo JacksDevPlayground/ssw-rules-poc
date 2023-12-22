@@ -2,16 +2,13 @@ import { config, fields, collection, singleton, GitHubConfig, LocalConfig } from
 import { nanoid } from 'nanoid';
 import { componentBlocks } from './app/components/keystatic/component-blocks';
 
-const storage: LocalConfig['storage'] | GitHubConfig['storage'] =
-  process.env.NODE_ENV === 'development'
-    ? { kind: 'local' }
-    : {
-      kind: 'github',
-      repo: {
-        owner: process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_OWNER!,
-        name: process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG!,
-      },
-    }
+const storage: GitHubConfig['storage'] = {
+  kind: 'github',
+  repo: {
+    owner: process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_OWNER!,
+    name: process.env.NEXT_PUBLIC_VERCEL_GIT_REPO_SLUG!,
+  },
+}
 
 export default config({
   storage,
@@ -98,7 +95,10 @@ export default config({
             publicPath: '/rules/'
           },
         }),
-        image: fields.image({ label: 'Image' }),
+        image: fields.image({
+          label: 'Image', directory: 'public/rules',
+          publicPath: '/rules/'
+        }),
         childCategories: fields.array(
           fields.relationship({
             label: 'Child Categories', collection: 'category',
@@ -141,7 +141,10 @@ export default config({
             publicPath: '/rules/'
           },
         }),
-        image: fields.image({ label: 'Image' }),
+        image: fields.image({
+          label: 'Image', directory: 'public/rules',
+          publicPath: '/rules/'
+        }),
         rules: fields.array(
           fields.relationship({
             label: 'Rules', collection: 'rules',

@@ -13,6 +13,7 @@ import YouTubeVideo from "../component-blocks/youtube-video/youtube-video";
 import EmailTemplate from "../component-blocks/email-template/email-template";
 import Aside from "../component-blocks/aside/aside";
 import Greybox from "../component-blocks/greybox/greybox";
+import CustomImage from "../component-blocks/custom-image/custom-image";
 
 /**
  * Override default renderers provided by @keystatic/core/renderer
@@ -54,4 +55,5 @@ export const ComponentBlockRenderers = {
 	EmailTemplateComponent: (props) => <EmailTemplate {...props} />,
 	AsideComponent: (props) => <Aside {...props} />,
 	GreyboxComponent: (props) => <Greybox {...props} />,
+	CustomImageComponent: (props) => <CustomImage {...props} />,
 } satisfies InferRenderersForComponentBlocks<typeof componentBlocks>;

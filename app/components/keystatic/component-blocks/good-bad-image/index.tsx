@@ -17,6 +17,8 @@ export const GoodBadImageComponent = component({
 		image: fields.image({
 			label: 'Image',
 			description: 'Image to display',
+			directory: 'public/rules',
+			publicPath: '/rules/'
 		}),
 		figureText: fields.text({ label: 'Figure Text', description: 'This does not add a "Figure:" infrom of the text ' }),
 	},

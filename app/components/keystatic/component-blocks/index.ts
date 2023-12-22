@@ -5,6 +5,8 @@ import { YoutubeVideoComponent } from "./youtube-video";
 import { EmailTemplateComponent } from "./email-template";
 import { AsideComponent } from "./aside";
 import { GreyboxComponent } from "./greybox";
+import { CustomImageComponent } from "./custom-image";
+
 /**
  * The components we want in the /keystatic editor 
  */
@@ -15,5 +17,6 @@ export const componentBlocks = {
 	YoutubeVideoComponent,
 	EmailTemplateComponent,
 	AsideComponent,
-	GreyboxComponent
+	GreyboxComponent,
+	CustomImageComponent
 };
